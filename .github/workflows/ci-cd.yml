@@ -55,4 +55,15 @@ jobs:
     - name: Push the Docker image
       run: |
         docker push karan999/frontend:latest
-        docker push karan999/backend:latest  
+        docker push karan999/backend:latest
+  
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.GKE_SA }}
+
+    - name: Get GKE Credentials
+      uses: google-github-actions/get-gke-credentials@v1
+      with:
+        cluster_name: ${{ secrets.GKE_CLUSTER_NAME }}
+        location: ${{ secrets.GKE_CLUSTER_ZONE }}
