@@ -50,17 +50,22 @@ jobs:
  
     - name: Frontend Build the Docker image
       run: |
-        docker build . --file ./frontend/Dockerfile --tag karan999/frontend:latest
+        cd frontend
+        docker build . --file Dockerfile --tag karan999/frontend:latest
         
    
     - name: Backend Build the Docker image
       run: |
+        cd backend
         docker build . --file ./backend/Dockerfile --tag karan999/backend:latest
-    - name: Push the Docker image
+    - name: Push the Frontend Docker image
       run: |
         docker push karan999/frontend:latest
+        
+    - name: Push the Backend Docker image
+      run: |
         docker push karan999/backend:latest
-  
+
     - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v1
       with:
