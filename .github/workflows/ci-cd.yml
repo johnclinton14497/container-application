@@ -35,11 +35,24 @@ jobs:
         cd backend
         npm test
 
-  # cd:
+  cd:
 
-  #   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: Build the Docker image
-  #     run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+ 
+    - name: Build the Docker image
+      run: |
+        docker build . --file ./frontend/Dockerfile --tag karan999/frontend:latest
+        docker build . --file ./backend/Dockerfile --tag karan999/backend:latest
+    - name: Push the Docker image
+      run: |
+        docker push karan999/frontend:latest
+        docker build karan999/backend:latest  
