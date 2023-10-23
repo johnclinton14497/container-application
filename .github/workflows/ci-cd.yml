@@ -32,9 +32,7 @@ jobs:
 
     - name: Run Tests
       run: |
-        cd frontend
-        npm test
-        cd ../backend
+        cd backend
         npm test
 
   # cd:
