@@ -57,7 +57,8 @@ const runMigrationScript = async () => {
         `INSERT INTO sample_data (name) VALUES 
         ('Item 1'),
         ('Item 2'),
-        ('Item 3');`
+        ('Item 3'),
+        ('Item 4');`
       );
 
       console.log('Table created and migration script executed successfully.');
