@@ -5,7 +5,7 @@ function DataDisplay() {
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('http://3.134.113.238:5000/api/data')
+    fetch('http://34.74.172.155:5000/api/data')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error fetching data:', error));
