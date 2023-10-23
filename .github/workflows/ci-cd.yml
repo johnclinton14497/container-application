@@ -67,3 +67,8 @@ jobs:
       with:
         cluster_name: 'sample-app-cluster'
         location: 'us-east1'
+    - id: 'get-pods'
+      run: |
+           kubectl rollout restart deploy backend-app-deploy
+           kubectl rollout restart deploy frontend-app-deploy
+           kubectl get pods 
