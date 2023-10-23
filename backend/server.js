@@ -13,9 +13,9 @@ app.use((req, res, next) => {
 
 const pool = new Pool({
   user: 'postgres',
-  host: '172.17.0.2', // This is the name of the database service in Docker
+  host: '104.196.216.21', // This is the name of the database service in Docker
   database: 'postgres',
-  password: 'mysecretpassword',
+  password: 'admin@123',
   port: 5432,
 });
 
