@@ -48,9 +48,13 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
  
-    - name: Build the Docker image
+    - name: Frontend Build the Docker image
       run: |
         docker build . --file ./frontend/Dockerfile --tag karan999/frontend:latest
+        
+   
+    - name: Backend Build the Docker image
+      run: |
         docker build . --file ./backend/Dockerfile --tag karan999/backend:latest
     - name: Push the Docker image
       run: |
