@@ -59,7 +59,8 @@ const addNewData = async () => {
     await pool.query(
       `INSERT INTO sample_data (name) VALUES
       ('New Item 1'),
-      ('New Item 2');`
+      ('New Item 2'),
+        ('New Data');`
     );
 
     console.log('New data added.');
