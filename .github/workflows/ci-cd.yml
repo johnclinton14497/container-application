@@ -55,4 +55,4 @@ jobs:
     - name: Push the Docker image
       run: |
         docker push karan999/frontend:latest
-        docker build karan999/backend:latest  
+        docker push karan999/backend:latest  
