@@ -18,22 +18,22 @@ jobs:
       with:
         node-version: '14'
 
-    # - name: Install Dependencies
-    #   run: | 
-    #     cd frontend
-    #     npm install
-    #     cd ../backend
-    #     npm install
+    - name: Install Dependencies
+      run: | 
+        cd frontend
+        npm install
+        cd ../backend
+        npm install
 
-    # - name: Build React App
-    #   run: |
-    #     cd frontend
-    #     npm run build
+    - name: Build React App
+      run: |
+        cd frontend
+        npm run build
 
-    # - name: Run Tests
-    #   run: |
-    #     cd backend
-    #     npm test
+    - name: Run Tests
+      run: |
+        cd backend
+        npm test
 
   cd:
 
